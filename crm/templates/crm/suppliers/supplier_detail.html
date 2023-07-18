@@ -1,0 +1,23 @@
+{% extends 'navbar.html' %}
+{% block content %}
+    <h2>{{ supplier.supplier_name }}</h2>
+    <table class="table table-bordered">
+        <thead>
+        <tr>
+            <th>Address</th>
+            <th>Contact person</th>
+            <th>Phone number</th>
+            <th>Email</th>
+        </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>{{ supplier.address }}</td>
+                <td>{{ supplier.contact_person }}</td>
+                <td>{{ supplier.phone_number }}</td>
+                <td>{{ supplier.email }}</td>
+            </tr>
+        </tbody>
+    </table>
+        <a href="{% url 'crm:supplier_list' %}" class="btn btn-primary">Back</a>
+{% endblock %}

@@ -1,0 +1,29 @@
+{% extends 'navbar.html' %}
+{% block content %}
+    <h1>Product List</h1>
+    <a href="{% url 'inventory:create_product' %}" class="btn btn-primary">Create Product</a>
+    <table class="table table-bordered">
+        <thead>
+        <tr>
+            <th>Drawing Number</th>
+            <th>Name</th>
+            <th>Customer</th>
+
+            <th>Edit</th>
+            <th>Delete</th>
+        </tr>
+        </thead>
+        <tbody>
+        {% for product in products %}
+            <tr>
+                <td><a href="{% url 'inventory:product_detail' product.pk %}">{{ product.product_drw_number }}</a></td>
+                <td>{{ product.product_name }}</td>
+                <td>{{ product.customer }}</td>
+                <td><a href="{% url 'inventory:update_product' product.pk %}">Edit</a></td>
+                <td><a href="{% url 'inventory:delete_product' product.pk %}">Delete</a></td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+
+{% endblock %}

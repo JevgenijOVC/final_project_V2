@@ -1,0 +1,58 @@
+{% extends 'navbar.html' %}
+{% block content %}
+    <h1>Employee List</h1>
+    <a href="{% url 'hr:create_employee' %}" class="btn btn-primary">Add Employee</a>
+
+    <table class="table table-bordered">
+        <thead>
+        </thead>
+        <tbody>
+        <tr>
+            <th>Tabelio numeris</th>
+            <th>Padalinys</th>
+            <th>Vardas</th>
+            <th>Pavardė</th>
+            <th>Statusas</th>
+            <th>Edit</th>
+            <th>Delete</th>
+        </tr>
+
+
+        {% for employee in employees %}
+            <tr>
+                <td><a href="{% url 'hr:employee_detail' employee.pk %}">{{ employee.company_id }}</a></td>
+                <td>{{ employee.department }}</td>
+                <td>{{ employee.first_name }}</td>
+                <td>{{ employee.last_name }}</td>
+                <td>{{ employee.status }}</td>
+                <td><a href="{% url 'hr:update_employee' employee.pk %}">Edit</a></td>
+                <td><a href="{% url 'hr:delete_employee' employee.pk %}">Delete</a></td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+
+{% endblock %}
+
+{# Pameginti suformuoti tokio tipo lentele#}
+{#<div class='table-responsive'>#}
+{#        <table class="table table-bordered table-condensed">#}
+{#        <thead>#}
+{#            <th>Date</th><th>From User</th><th>To User</th>#}
+{#            <th>From Location</th><th>To Location</th><th>By</th>#}
+{#        </thead>#}
+{#        <tbody>#}
+{#            <?php foreach($history as $h){ ;?>#}
+{#                <tr>#}
+{#                    <td><?=$h['date'];?></td>#}
+{#                    <td><?=$h['from_user'];?></td>#}
+{#                    <td><?=$h['to_user'];?></td>#}
+{#                    <td><?=$h['from_location'];?></td>#}
+{#                    <td><?=$h['to_location'];?></td>#}
+{#                    <td><?=$h['by_user'];?></td>#}
+{#                </tr>#}
+{#            <?php } ;?>#}
+{#        </tbody>#}
+{#        </table>#}
+{#</div>#}
+{##}

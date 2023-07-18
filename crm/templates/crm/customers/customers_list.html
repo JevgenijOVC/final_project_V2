@@ -1,0 +1,20 @@
+{% extends 'navbar.html' %}
+{% block content %}
+    <h1>Customer list</h1>
+        <a href="{% url 'crm:create_customer' %}" class="btn btn-primary">Create Customer</a>
+    <table class="table table-bordered">
+        <thead>
+        <tr>
+            <th>Name</th>
+        </tr>
+        </thead>
+        <tbody>
+        {% for customer in customers %}
+            <tr>
+                <td><a href="{% url 'crm:customer_detail' customer.pk %}">{{ customer.customer_name }}</a></td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+
+{% endblock %}

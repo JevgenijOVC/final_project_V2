@@ -1,0 +1,24 @@
+{% extends 'navbar.html' %}
+{% block content %}
+
+
+    <table class="table table-bordered">
+        <thead>
+        <tr>
+            <th> Pavadinimas </th>
+            <th> Aprašymas </th>
+            <th> Operacijos įkainis </th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr>
+                <td>{{ operation.operation_name }}</td>
+                <td>{{ operation.operation_description }}</td>
+                <td>{{ operation.operation_cost_h }}</td>
+        </tr>
+        </tbody>
+    </table>
+    <a href="{% url 'production:update_operation' operation.pk %}" class="btn btn-primary">Edit</a>
+    <a href="{% url 'production:delete_operation' operation.pk %}" class="btn btn-primary">Delete</a>
+    <a href="{% url 'production:operation_list' %}" class="btn btn-primary">Back to list</a>
+{% endblock %}

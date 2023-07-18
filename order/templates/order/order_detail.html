@@ -1,0 +1,27 @@
+{% extends 'navbar.html' %}
+{% block content %}
+
+
+    <table class="table table-bordered">
+        <thead>
+        <tr>
+            <th>Order number</th>
+            <th>Order description</th>
+            <th>Order CUSTOMER</th>
+            <th>Order Product</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr>
+            <td>{{ order.order_number }}</td>
+            <td>{{ order.description }}</td>
+            <td>{{ order.customer }}</td>
+
+
+        </tr>
+        </tbody>
+    </table>
+    <a href="{% url 'order:update_order' order.pk %}" class="btn btn-primary">Edit</a>
+    <a href="{% url 'order:delete_order' order.pk %}" class="btn btn-primary">Delete</a>
+    <a href="{% url 'order:order_list' %}" class="btn btn-primary">Back to list</a>
+{% endblock %}

@@ -1,0 +1,21 @@
+{% extends 'navbar.html' %}
+{% block content %}
+    <h1>Supplier lists</h1>
+    <a href="{% url 'crm:create_supplier' %}" class="btn btn-primary">Create Supplier</a>
+    <table class="table table-bordered">
+        <thead>
+        <tr>
+            <th>Supplier</th>
+
+        </tr>
+        </thead>
+        <tbody>
+        {% for supplier in suppliers %}
+            <tr>
+                <td><a href="{% url 'crm:supplier_detail' supplier.pk %}">{{ supplier.supplier_name }}</a></td>
+
+        {% endfor %}
+        </tbody>
+    </table>
+
+{% endblock %}

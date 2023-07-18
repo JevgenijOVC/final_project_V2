@@ -1,0 +1,71 @@
+{% extends 'navbar.html' %}
+{% block content %}
+
+    <h2>{{ employee.first_name }} {{ employee.last_name }}</h2>
+
+    <table class="table table-bordered" style="width: 100%">
+        <thead>
+        <tr>
+            <th>USER</th>
+            <th>Company ID</th>
+            <th>National ID</th>
+            <th>Company Email</th>
+
+        </tr>
+        </thead>
+        <tbody>
+        <tr>
+            <td>{{ employee.user }}</td>
+            <td>{{ employee.company_id }}</td>
+            <td>{{ employee.national_id }}</td>
+            <td>{{ employee.email }}</td>
+
+        </tr>
+        </tbody>
+        <thead>
+        <tr>
+
+            <th>Salary</th>
+            <th>Department</th>
+            <th>Date Joining</th>
+            <th>status</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr>
+
+            <td>{{ employee.salary }} €</td>
+            <td>{{ employee.department }}</td>
+            <td>{{ employee.date_joining }}</td>
+            <td>{{ employee.status }}</td>
+        </tr>
+        </tbody>
+
+
+        <thead>
+        <tr>
+
+            <th>Marital Status</th>
+            <th>Spouse name</th>
+            <th>Email</th>
+            <th>Phone number</th>
+            <th>Address</th>
+            <th>City</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr>
+
+            <td>{{ employee.marital_status }}</td>
+            <td>{{ employee.name_spouse }}</td>
+            <td>{{ employee.personal_email }}</td>
+            <td>{{ employee.phone_number }}</td>
+            <td>{{ employee.address }}</td>
+            <td>{{ employee.city }}</td>
+        </tr>
+        </tbody>
+    </table>
+    <a href="{% url 'hr:update_employee' employee.pk %}" class="btn btn-primary">Edit</a>
+    <a href="{% url 'hr:delete_employee' employee.pk %}" class="btn btn-primary">Delete</a>
+    <a href="{% url 'hr:employee_list' %}" class="btn btn-primary">Back to list</a>
+{% endblock %}

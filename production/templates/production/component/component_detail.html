@@ -1,0 +1,32 @@
+{% extends 'navbar.html' %}
+{% block content %}
+
+
+    <table class="table table-bordered">
+        <thead>
+        <tr>
+            <th> Kodas </th>
+            <th> Pavadinimas </th>
+            <th> Aprašymas </th>
+            <th> Tipas </th>
+            <th> Tiekėjas </th>
+            <th> Kaina </th>
+
+        </tr>
+        </thead>
+        <tbody>
+        <tr>
+                <td>{{ component.code_id }}</td>
+                <td>{{ component.name }}</td>
+                <td>{{ component.description }}</td>
+                <td>{{ component.type }}</td>
+                <td>{{ component.supplier }}</td>
+                <td>{{ component.price }}</td>
+
+        </tr>
+        </tbody>
+    </table>
+    <a href="{% url 'production:update_component' component.pk %}" class="btn btn-primary">Edit</a>
+    <a href="{% url 'production:delete_component' component.pk %}" class="btn btn-primary">Delete</a>
+    <a href="{% url 'production:component_list' %}" class="btn btn-primary">Back to list</a>
+{% endblock %}

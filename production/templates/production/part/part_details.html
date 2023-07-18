@@ -1,0 +1,34 @@
+{% extends 'navbar.html' %}
+{% block content %}
+    <h1>{{ part.part_drawing_code }}</h1>
+
+    <table class="table table-bordered">
+        <thead>
+        <tr>
+            <th>Kodas</th>
+            <th>Pavadinimas</th>
+            <th>Brėžinys</th>
+            <th>Mediena</th>
+            <th>medienos tipas</th>
+            <th>FSC tipas</th>
+            <th>Kokybės tipas</th>
+
+
+        </tr>
+        </thead>
+        <tbody>
+        <tr>
+                <td>{{ part.code_id }}</td>
+                <td>{{ part.part_name }}</td>
+                <td>{{ part.part_drawings }}</td>
+                <td>{{ part.wood }}</td>
+                <td>{{ part.wood_type }}</td>
+                <td>{{ part.fsc_status }}</td>
+                <td>{{ part.quality_type }}</td>
+        </tr>
+        </tbody>
+    </table>
+    <a href="{% url 'production:update_part' part.pk %}" class="btn btn-primary">Edit</a>
+    <a href="{% url 'production:delete_part' part.pk %}" class="btn btn-primary">Delete</a>
+    <a href="{% url 'production:part_list' %}" class="btn btn-primary">Back to list</a>
+{% endblock %}

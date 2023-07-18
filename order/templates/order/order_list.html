@@ -1,0 +1,28 @@
+{% extends 'navbar.html' %}
+{% block content %}
+    <h1>Order List</h1>
+    <a href="{% url 'order:create_order' %}" class="btn btn-primary">Create ORDER</a>
+
+    <table class="table table-bordered">
+        <thead>
+        <tr>
+            <th>Order number</th>
+            <th>CUSTOMER</th>
+
+            <th>Edit</th>
+            <th>Delete</th>
+        </tr>
+        </thead>
+        <tbody>
+        {% for order in orders %}
+            <tr>
+                <td><a href="{% url 'order:order_detail' order.pk %}">{{ order.order_number }}</a></td>
+                <td>{{ order.customer }}</td>
+                <td><a href="{% url 'order:update_order' order.pk %}">Edit</a></td>
+                <td><a href="{% url 'order:delete_order' order.pk %}">Delete</a></td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+
+{% endblock %}

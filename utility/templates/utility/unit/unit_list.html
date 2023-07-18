@@ -1,0 +1,28 @@
+{% extends 'navbar.html' %}
+{% block content %}
+    <h1>Unit List</h1>
+    <a href="{% url 'utility:create_unit' %}" class="btn btn-primary">Create Unit</a>
+
+    <table class="table table-bordered">
+        <thead>
+        <tr>
+            <th>Name</th>
+            <th>Description</th>
+
+            <th>Edit</th>
+            <th>Delete</th>
+        </tr>
+        </thead>
+        <tbody>
+        {% for unit in units %}
+            <tr>
+                <td>{{ unit.unit }}</td>
+                <td>{{ unit.description }}</td>
+                <td><a href="{% url 'utility:update_unit' unit.pk %}">Edit</a></td>
+                <td><a href="{% url 'utility:delete_unit' unit.pk %}">Delete</a></td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+        <a href="{% url 'utility:utility' %}" class="btn btn-primary">Back to list</a>
+{% endblock %}

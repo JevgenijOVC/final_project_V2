@@ -1,0 +1,12 @@
+{% extends 'navbar.html' %}
+{% block content %}
+    <form method="POST">
+        {% csrf_token %}
+        {{ form1.as_p }}
+        <p>{{ form2.as_table }}</p>
+        <p>{{ form3.as_table }}</p>
+        <p>{{ form4.as_table }}</p>
+        <button type="submit">Update</button>
+    </form>
+    <a href="{% url 'inventory:product_list' %}" class="btn btn-primary">Back to list</a>
+{% endblock %}

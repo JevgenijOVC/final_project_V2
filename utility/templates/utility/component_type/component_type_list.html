@@ -1,0 +1,28 @@
+{% extends 'navbar.html' %}
+{% block content %}
+    <h1>Component Type List</h1>
+    <a href="{% url 'utility:create_component_type' %}" class="btn btn-primary">Create Component Type</a>
+
+    <table class="table table-bordered">
+        <thead>
+        <tr>
+            <th>Name</th>
+            <th>Description</th>
+
+            <th>Edit</th>
+            <th>Delete</th>
+        </tr>
+        </thead>
+        <tbody>
+        {% for type in component_type %}
+            <tr>
+                <td>{{ type.name }}</td>
+                <td>{{ type.description }}</td>
+                <td><a href="{% url 'utility:update_component_type' type.pk %}">Edit</a></td>
+                <td><a href="{% url 'utility:delete_component_type' type.pk %}">Delete</a></td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+        <a href="{% url 'utility:utility' %}" class="btn btn-primary">Back to list</a>
+{% endblock %}

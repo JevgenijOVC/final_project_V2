@@ -1,0 +1,10 @@
+{% extends 'navbar.html' %}
+{% block content %}
+    <h1>Unit</h1>
+    <a href="{% url 'utility:unit_list' %}" class="btn btn-primary">Unit List</a>
+    <a href="{% url 'utility:create_unit' %}" class="btn btn-primary">Create Unit</a>
+    <h1>Component Type</h1>
+    <a href="{% url 'utility:component_type_list' %}" class="btn btn-primary">Create Component type</a>
+    <a href="{% url 'utility:create_component_type' %}" class="btn btn-primary">Create Component type</a>
+
+{% endblock %}
