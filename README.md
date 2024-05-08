@@ -12,19 +12,19 @@ About my prod env: code has been build and tested on Django 4.2 and Python 3.11 
 8.	Let's start the engine with python manage.py runserver.
 
 **Business Logic**
-The underlying idea is being able to quickly planning production after receive orders
+The underlying idea is being able to quickly plan production after receiving orders
 
 **Frontend**
-I took a personal challenge in trying to do the whole project with Bootstrap 5, without using CSS stylesheet.
+I took a personal challenge in trying to do the whole project with Bootstrap 5.
 **Features**
-List of all the available feature:
+List of all the available features:
     Data entry:
-    •	**CRUD a new user (backend only) (in process)**
-    •	**CRUD a new user group (backend only) (in process)**
+    •	**CRUD a new user (backend only) (in the process)**
+    •	**CRUD a new user group (backend only) (in the process)**
     •	CRUD a new Customer
     •	CRUD a new Supplier
-    •	**CRUD a new Product (in process)**
-    •	**CRUD a new Order (in process)**
+    •	**CRUD a new Product (in the process)**
+    •	**CRUD a new Order (in the process)**
     •	CRUD a new Part
     •	CRUD a new Component
     •	CRUD a new Operation 
@@ -32,7 +32,7 @@ List of all the available feature:
 
 **Usage**
 1.	Access the application in your web browser at http://localhost:8000.
-2.	Log in using your superuser account or create a new account with appropriate permissions.
+2.	Login using your superuser account or create a new account with appropriate permissions.
 
 
 
